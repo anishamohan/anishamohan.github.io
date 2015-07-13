@@ -11,6 +11,9 @@
 		<title>Anisha Mohan</title>
 		
 		<style type="text/css">
+			body{
+				background-color:#EDEDED;
+			}
 			h1{
 				font-size:3em;
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -19,13 +22,16 @@
 			h3{
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 				margin-bottom:.5em;
+				margin-top:.5em;
 				color:#252525;
+				font-size:2em;
 			}
 			p{
 				font-size:1em;
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				margin:0em;
-				color:#D3D3D3;
+				margin:.5em 0 .5em 0;
+				color:#252525;
+				line-height:140%;
 			}
 			
 			.image{
@@ -37,6 +43,7 @@
 				background-position:center bottom;
 				background-size:cover;
 				background-image:url(ARCHER.jpg);
+				background-color:black;
 				z-index:1;
 			}
 			.writing{
@@ -121,9 +128,16 @@
 				z-index:9999;
 			}
 			.content{
-				margin:1% 5% 1%;
-				top:10.5em;
+				margin:2% 5% 2%;
+				top:100%;
 				position:absolute;
+			}
+			.section{
+				background-color:#FFFFFF;
+				border-radius:.25em;
+			}
+			.information{
+				margin:5%;
 			}
 		</style>
 		
@@ -149,7 +163,7 @@
 				}else{
 					bar.style.position='absolute';
 					bar.style.background='transparent';
-					bar.style.top=$(window).height();
+					bar.style.top='94.35%';
 				}
 			};
 			
@@ -183,7 +197,7 @@
 			<ul class="nav-bar">
 				<li class="nav-bar"><a class="nav-bar" href="#home">Home</a></li>
 				<li class="nav-bar"><a class="nav-bar" href="#about-me">About Me</a></li>
-				<li class="nav-bar"><a class="nav-bar">Projects</a></li>
+				<li class="nav-bar"><a class="nav-bar" href="#projects">Projects</a></li>
 				<li class="nav-bar"><a class="nav-bar">Resume</a></li>
 				<li class="nav-bar"><a class="nav-bar">Contact Me</a></li>
 			</ul>
@@ -191,11 +205,22 @@
 				<span class="color-stripes red"></span>
 			</div-->
 		</div>
-		<div id="anchor" style="top:100%"></div>
-		<div class="content" style="top:100%">
-			<div id="about-me">
-				<h3>About Me</h3>
-				<p>Hi, my name is Anisha Mohan. I am currently a Junior at Rutgers University studying Computer Science and a DJ at 90.3 The Core. I am trying to learn more about computer science and maybe explore more things that interest me, so look here for updates!</p>
+		<div class="content" id="about-me">
+			<div class="section">			
+				<div class="information">
+					<br>
+					<h3>About Me</h3>
+					<p>Hi, my name is Anisha Mohan. I am currently a Junior at Rutgers University studying Computer Science and a DJ at 90.3 The Core. I am trying to learn more about computer science and maybe explore more things that interest me, so look here for updates!</p>
+					<br>
+				</div>
+			</div>
+			<div class="section" id="projects">
+				<div class="information">
+					<br>
+					<h3>Projects</h3>
+					<p>I am currently working at Gartner Inc. as an intern. I am not specifically working on a project outside of this currently, however, I may post random tidbits of things I do here.</p>
+					<br>
+				</div>
 			</div>
 		</div>
 	</body>
