@@ -11,9 +11,12 @@
 		<title>Anisha Mohan</title>
 		
 		<style type="text/css">
-			body{
-				background-color:#EDEDED;
+			body, html{
+				height:100%;
+				width:100%;
 			}
+
+			/* Basic Fonts~ */
 			h1{
 				font-size:3em;
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,8 +24,9 @@
 			}
 			h3{
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				margin-bottom:.5em;
-				margin-top:.5em;
+				/*margin-bottom:.5em;
+				margin-top:.5em;*/
+				margin:0 0 .5em 0;
 				color:#252525;
 				font-size:2em;
 			}
@@ -33,7 +37,19 @@
 				color:#252525;
 				line-height:140%;
 			}
+			a{
+				/*text-decoration:underline;*/
+				text-decoration:none;
+				font-size:1em;
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				color:#252525;
+				line-height:140%;
+			}
+			a:hover{
+				color:#69C773;
+			}
 			
+			/* First display (as soon as page is opened) */
 			.image{
 				width:100%;
 				height:100%;
@@ -42,7 +58,7 @@
 				top:0px;
 				background-position:center bottom;
 				background-size:cover;
-				background-image:url(ARCHER.jpg);
+				/*background-image:url(ARCHER.jpg);*/
 				background-color:black;
 				z-index:1;
 			}
@@ -55,6 +71,7 @@
 				text-align:center;
 			}
 			
+			/* Might be deleted? */
 			.header{
 				background: #F7F7F7;
 				height:8em;
@@ -81,6 +98,7 @@
 				margin-top:.2em;
 			}
 			
+			/* The Navigation Bar*/
 			.nav-bar{
 				text-align:center;
 			}
@@ -111,11 +129,10 @@
 				color:#FFF;
 				background:#252525;
 			}
-			.selected{
+			.selected{ /* Changes color when it is selected */
 				background-color:#69C773;
 				color:#FFF;
 			}
-			
 			#nav{
 				height:2.5em;
 				width:100%;
@@ -127,17 +144,34 @@
 				position:absolute;
 				z-index:9999;
 			}
+
+			#space{ /* Creates a space between content and top so for nav bar */
+				height:0em;
+			}
+
+			/* The actual information */
 			.content{
-				margin:2% 5% 2%;
+				/*margin:2% 5% 2%;*/
 				top:100%;
+				left:0;
 				position:absolute;
 			}
 			.section{
+				/*margin:2% 5% 2%;*/
 				background-color:#FFFFFF;
 				border-radius:.25em;
+				min-height:100vh;
+				width:100%;
+				/*vertical-align:top;*/
 			}
 			.information{
-				margin:5%;
+				padding:5% 6% 5% 6%;
+			}
+			.anchor{
+				display:block;
+				height:2.5em;
+				margin-top:-2.5em;
+				visibility:hidden;
 			}
 		</style>
 		
@@ -160,10 +194,12 @@
 					bar.style.position='fixed';
 					bar.style.background='#666666';
 					bar.style.top=0;
+					document.getElementById('space').style.height='2.5em';
 				}else{
 					bar.style.position='absolute';
 					bar.style.background='transparent';
-					bar.style.top='94.35%';
+					bar.style.top='94.1%';
+					document.getElementById('space').style.height='0em';
 				}
 			};
 			
@@ -180,6 +216,15 @@
 				}
 				return curtop;
 			}
+
+			navigator.sayswho= (function(){
+				var N= navigator.appName, ua= navigator.userAgent, tem,
+					M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*([\d\.]+)/i);
+				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+				M = M? [M[1], M[2]]:[N, navigator.appVersion, '-?'];
+				return M.join(' ');
+			})();
+			console.log(navigator.sayswho);
 		</script>
 	</head>
 
@@ -190,7 +235,7 @@
 		</header> -->
 		<div class="image" id="home"></div>
 		<div class="writing">
-			<h1 style="color:white">Anisha Mohan</h1>
+			<h1 style="color:white">anisha mohan</h1>
 			<p style="color:white">Just a college girl trying not to have an existential crisis</p>
 		</div>
 		<div id="nav">
@@ -198,30 +243,42 @@
 				<li class="nav-bar"><a class="nav-bar" href="#home">Home</a></li>
 				<li class="nav-bar"><a class="nav-bar" href="#about-me">About Me</a></li>
 				<li class="nav-bar"><a class="nav-bar" href="#projects">Projects</a></li>
-				<li class="nav-bar"><a class="nav-bar">Resume</a></li>
-				<li class="nav-bar"><a class="nav-bar">Contact Me</a></li>
+				<li class="nav-bar"><a class="nav-bar" href="#resume">Resume</a></li>
+				<li class="nav-bar"><a class="nav-bar" href="#contact">Contact Me</a></li>
 			</ul>
 			<!--div class="color-stripes">
 				<span class="color-stripes red"></span>
 			</div-->
 		</div>
-		<div class="content" id="about-me">
-			<div class="section">			
-				<div class="information">
-					<br>
+		<space id="space"></space><!-- Needed? Helpful? -->
+		<div class="content">
+			<span class="anchor" id="about-me"></span>
+			<div class="section">
+				<div class="information" style="width:38%;float:left">
+					<!--br-->
 					<h3>About Me</h3>
-					<p>Hi, my name is Anisha Mohan. I am currently a Junior at Rutgers University studying Computer Science and a DJ at 90.3 The Core. I am trying to learn more about computer science and maybe explore more things that interest me, so look here for updates!</p>
-					<br>
+					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and I am currently studying my third year of Computer Science at Rutgers Unvisity while also being a DJ at <a href="thecore.fm">90.3 the core</a>.<br>This website here is where I plan on playing around with web design and development as well as where I want to post interesting things that I might do in my free time.<br>I hope you enjoy your stay!</p>
+					<!--br-->
 				</div>
+				<!--div class="information" style="width:38%;float:right;background:#EDEDED">
+					<h3>Interests</h3>
+					<li>
+						<ul></ul>
+					</li>
+				</div-->
 			</div>
-			<div class="section" id="projects">
+			<span class="anchor" id="projects"></span>
+			<div class="section">
 				<div class="information">
-					<br>
+					<!--br-->
 					<h3>Projects</h3>
 					<p>I am currently working at Gartner Inc. as an intern. I am not specifically working on a project outside of this currently, however, I may post random tidbits of things I do here.</p>
-					<br>
+					<!--br-->
 				</div>
 			</div>
+		</div>
+		<div id="footer">
+			<p>Website was created by Anisha Mohan in 2015</p>
 		</div>
 	</body>
 </html>
