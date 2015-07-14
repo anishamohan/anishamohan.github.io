@@ -28,7 +28,7 @@
 				margin-top:.5em;*/
 				margin:0 0 .5em 0;
 				color:#252525;
-				font-size:2em;
+				font-size:1.75em;
 			}
 			p{
 				font-size:1em;
@@ -114,6 +114,7 @@
 				text-align:center;
 				position:relative;
 				margin:auto;
+				height:2.5em;
 			}
 			a.nav-bar{
 				color:#FFF;
@@ -122,8 +123,12 @@
 				text-decoration:none;
 				position:relative;
 				display:inline-block;
-				padding:.7em .75em .7em .75em;
-				margin:0 .1em 0 .1em;
+				padding:.5em;
+				/*padding:.7em .75em .7em .75em;
+				margin:0 .1em 0 .1em;*/
+				left:50%;
+				top:50%;
+				-webkit-transform:translate(-50%,-50%);
 			}
 			a.nav-bar:hover{
 				color:#FFF;
@@ -178,9 +183,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				$('a').each(function(){
+				$('a.nav-bar').each(function(){
 					$(this).click(function(){
-						$('a').removeClass('selected');
+						$('a.nav-bar').removeClass('selected');
 						$(this).addClass('selected');
 					})
 				});
@@ -257,7 +262,7 @@
 				<div class="information" style="width:38%;float:left">
 					<!--br-->
 					<h3>About Me</h3>
-					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and I am currently studying my third year of Computer Science at Rutgers Unvisity while also being a DJ at <a href="thecore.fm">90.3 the core</a>.<br>This website here is where I plan on playing around with web design and development as well as where I want to post interesting things that I might do in my free time.<br>I hope you enjoy your stay!</p>
+					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and I am currently studying my third year of Computer Science at Rutgers Unvisity while also being a DJ at <a href="http://thecore.fm" target="_blank">90.3 the core</a>.<br>This website here is where I plan on playing around with web design and development as well as where I want to post interesting things that I might do in my free time.<br>I hope you enjoy your stay!</p>
 					<!--br-->
 				</div>
 				<!--div class="information" style="width:38%;float:right;background:#EDEDED">
@@ -276,9 +281,6 @@
 					<!--br-->
 				</div>
 			</div>
-		</div>
-		<div id="footer">
-			<p>Website was created by Anisha Mohan in 2015</p>
 		</div>
 	</body>
 </html>
