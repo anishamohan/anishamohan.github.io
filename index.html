@@ -30,6 +30,13 @@
 				color:#252525;
 				font-size:1.75em;
 			}
+			h4{
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin:0 0 .5em 0;
+				font-size:1.25em;
+				color:#252525;
+				text-decoration:none;
+			}
 			p{
 				font-size:1em;
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -42,11 +49,15 @@
 				text-decoration:none;
 				font-size:1em;
 				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				color:#252525;
+				color:#BBBBBB;
 				line-height:140%;
 			}
 			a:hover{
 				color:#69C773;
+			}
+			li{
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				list-style-type:none;
 			}
 			
 			/* First display (as soon as page is opened) */
@@ -74,6 +85,7 @@
 			}
 			
 			/* Might be deleted? */
+			/*
 			.header{
 				background: #F7F7F7;
 				height:8em;
@@ -81,11 +93,11 @@
 				top:0px;
 				left:0px;
 				margin:0;
-				/*padding:.5em 1% .5em 1%;*/
+				/*padding:.5em 1% .5em 1%;*
 				padding:0;
 				text-align:center;
 				position:absolute;
-				/* border-radius:.5em; */
+				/* border-radius:.5em; *
 			}
 			.header-text{
 				background:transparent;
@@ -98,7 +110,7 @@
 			}
 			p.header-text{
 				margin-top:.2em;
-			}
+			}*/
 			
 			/* The Navigation Bar*/
 			.nav-bar{
@@ -174,13 +186,36 @@
 				/*vertical-align:top;*/
 			}
 			.information{
-				padding:5% 6% 5% 6%;
+				padding:4% 6% 5% 6%;
 			}
 			.anchor{
 				display:block;
 				height:2.5em;
 				margin-top:-2.5em;
 				visibility:hidden;
+			}
+
+			.project{
+				background:#FFFFFF;
+				padding:1%;
+				margin-bottom:.5em;
+			}
+			.project-header{
+				cursor:pointer;
+			}
+			.project-info{
+				display:none;
+			}
+
+			a.resume-btn{
+				background-color:#FF9999;
+				padding:.5em;
+				color:#252525;
+			}
+			a.resume-btn:hover{
+				border:.1em solid #FF9999;
+				background-color:#FFFFFF;
+				color:#252525;
 			}
 		</style>
 		
@@ -226,6 +261,7 @@
 				return curtop;
 			}
 
+			/*
 			navigator.sayswho= (function(){
 				var N= navigator.appName, ua= navigator.userAgent, tem,
 					M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*([\d\.]+)/i);
@@ -234,6 +270,15 @@
 				return M.join(' ');
 			})();
 			console.log(navigator.sayswho);
+			*/
+			$(document).ready(function(){
+				$(".project-header").click(function (){
+					$header = $(this);
+					$content = $header.next();
+					$content.slideToggle(500);
+				});
+			});
+
 		</script>
 	</head>
 
@@ -245,15 +290,15 @@
 		<div class="image" id="home"></div>
 		<div class="writing">
 			<h1 style="color:white">anisha mohan</h1>
-			<p style="color:white">Just a college girl trying not to have an existential crisis</p>
+			<!--p style="color:white">Just a college girl trying not to have an existential crisis</p-->
 		</div>
 		<div id="nav">
 			<ul class="nav-bar">
-				<li class="nav-bar"><a class="nav-bar" href="#home">Home</a></li>
-				<li class="nav-bar"><a class="nav-bar" href="#about-me">About Me</a></li>
-				<li class="nav-bar"><a class="nav-bar" href="#projects">Projects</a></li>
-				<li class="nav-bar"><a class="nav-bar" href="#resume">Resume</a></li>
-				<li class="nav-bar"><a class="nav-bar" href="#contact">Contact Me</a></li>
+				<li class="nav-bar" title="The top of the website"><a class="nav-bar" href="#home">Home</a></li>
+				<li class="nav-bar" title="Basic information about myself"><a class="nav-bar" href="#about">About</a></li>
+				<li class="nav-bar" title="See what I have been working on"><a class="nav-bar" href="#projects">Projects</a></li>
+				<li class="nav-bar" title="See my experience and history"><a class="nav-bar" href="#resume">Resume</a></li>
+				<li class="nav-bar" title="Get in contact with me"><a class="nav-bar" href="#contact">Contact Me</a></li>
 			</ul>
 			<!--div class="color-stripes">
 				<span class="color-stripes red"></span>
@@ -261,30 +306,67 @@
 		</div>
 		<space id="space"></space><!-- Needed? Helpful? -->
 		<div class="content">
-			<span class="anchor" id="about-me"></span>
+			<span class="anchor" id="about"></span>
 			<div class="section">
-				<div class="information" style="width:38%;float:left">
+				<div class="information" style="width:50%;float:left">
 					<!--br-->
-					<h3>About Me</h3>
-					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and I am currently studying my third year of Computer Science at Rutgers Unvisity while also being a DJ at <a href="http://thecore.fm" target="_blank">90.3 the core</a>.<br>This website here is where I plan on playing around with web design and development as well as where I want to post interesting things that I might do in my free time.<br>I hope you enjoy your stay!</p>
+					<h3>About</h3>
+					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and I am currently a student at Rutgers University. I am studying my third year of Computer Science as well as a DJing a music-based radio show at <a href="http://thecore.fm" target="_blank">90.3 The Core.</a><br>As I learn and explore more of my interests, I hope to update this website to show my progress. I also want to play around with interesting and pretty web developement and design. The website might look bare today, but it won't be for long!<br>I hope you enjoy your stay!</p>
 					<!--br-->
 				</div>
-				<!--div class="information" style="width:38%;float:right;background:#EDEDED">
-					<h3>Interests</h3>
-					<li>
-						<ul></ul>
-					</li>
-				</div-->
+				<!--
+				<div class="information" style="width:26%; float:right;background:#FFDDDD;display:inline-block;height:100%">
+					<h3>Links</h3>
+					<ul>
+						<li>LinkedIn</li>
+						<li>
+					</ul>
+				</div>
+				-->
 			</div>
 			<span class="anchor" id="projects"></span>
-			<div class="section">
+			<div class="section" style="background:#EDEDED">
 				<div class="information">
 					<!--br-->
 					<h3>Projects</h3>
 					<p>I am currently working at Gartner Inc. as an intern. I am not specifically working on a project outside of this currently, however, I may post random tidbits of things I do here.</p>
+					<div class="project">
+						<div class="project-header">
+							<p style="color:#69C773"><b>Multithreaded/Multiprocessing Bank</b></p>
+						</div>
+						<div style="display:none">
+							<p>I created a very simple bank operator that utilizes multithreading and multiprocessing in order to keep track of multiple accounts from multiple users. This program was written in C and is run through servers on terminal.</p>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project-header">
+							<p style="color:#69C773"><b>Friendship Graph</b></p>
+						</div>
+						<div style="display:none">
+							<p>Step aside Facebook, I just created the best way to keep track of friends and cliques using Java. This project was a project for class in order to utilize data structures and fastest-path alorithms.</p>
+						</div>
+					</div>
 					<!--br-->
 				</div>
 			</div>
+			<span class="anchor" id="resume"></span>
+			<div class="section">
+				<div class="information">
+					<h3>Resume</h3>
+					<a class="resume-btn" id="resume-html">View in HTML</a>
+					<a class="resume-btn" id="resume-pdf">View in PDF</a>
+					<div id="resume"></div>
+				</div>
+			</div>
+			<!--
+			<span class="anchor" id="contact"></span>
+			<div class="section" style="background-color:#69C773">
+				<div class="information">
+					<h3 style="color:#FFFFFF">Contact Me</h3>
+
+				</div>
+			</div>
+		-->
 		</div>
 	</body>
 </html>
