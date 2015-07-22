@@ -287,6 +287,15 @@
 				});
 			});
 
+			$(document).ready(function(){
+				$("#resume").load("resume-html.html");
+				document.getElementById("resume-html").addEventListener('click', function() {
+    				$("#resume").load("resume-html.html");
+				}, false);
+   				document.getElementById('resume-pdf').addEventListener('click', function() {
+    				$("#resume").load("resume-pdf.html");
+				}, false);
+			});
 		</script>
 	</head>
 
@@ -312,18 +321,9 @@
 				<div class="information">
 					<!--br-->
 					<h3>About</h3>
-					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and this is my website. I am currently a Computer Science major at Rutgers University as well as a DJ and Librarian at <a href="http://thecore.fm" target="_blank">90.3 The Core.</a><br>As I learn and explore more of my interests, I hope to update this website to show my progress. I also want to play around with interesting and pretty web developement and design. The website might look bare today, but it won't be for long!<br>I hope you enjoy your stay!</p>
+					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and this is my website. I am currently a Computer Science major at Rutgers University as well as a DJ and Librarian at 90.3 The Core.<br>As I learn and explore more of my interests, I hope to update this website to show my progress. I also want to play around with interesting and pretty web developement and design. The website might look bare today, but it won't be for long!<br>I hope you enjoy your stay!</p>
 					<!--br-->
 				</div>
-				<!--
-				<div class="information" style="width:26%; float:right;background:#FFDDDD;display:inline-block;height:100%">
-					<h3>Links</h3>
-					<ul>
-						<li>LinkedIn</li>
-						<li>
-					</ul>
-				</div>
-				-->
 			</div>
 			<span class="anchor" id="projects"></span>
 			<div class="section" style="background:#EDEDED">
@@ -357,231 +357,16 @@
 					<a class="resume-btn" id="resume-html">View in HTML</a>
 					<a class="resume-btn" id="resume-pdf">View in PDF</a>
 					<br>
-					<div id="resume">
-						<p style="margin-top:.75em;font-size:.75em">(Click on any section to open or close the text)</p>
-						<div class="resume"><!-- Education - college -->
-							<div class="project-header" style="display:inline">
-								<h4 style="color:#FF9999; display:inline">Rutgers University</h4>
-								<p style="display:inline"><b>School of Arts and Sciences</b></p>
-							</div>
-							<div class="resume-section" style="display:none">
-								<p class="resume">B.S. in Computer Science<p>
-								<p class="resume">Honors Program<p>
-								<p class="resume"><i>August 2013 - May 2017</i></p>
-								<div class="project-header">
-									<p class="resume" style="text-decoration:underline">(Courses)</p>
-								</div>
-								<div class="resume-section" style="display:none">
-									<ul>
-										<li title="Currently Attending">Design and Analysis of Computer Algorithms</li>
-										<li title="Currently Attending">Operating Systems</li>
-										<li title="Scheme, Prolog, C">Principles of Programming Languages</li>
-										<li title="C">Systems Programming</li>
-										<li title="C">Computer Architecture</li>
-										<li title="Java">Data Structures</li>
-										<li title="Java">Introduction to Computer Science</li>
-										<li>Discrete Structures I and II</li>
-										<li>Intro to Linear Algebra</li>
-										<li>Calculus I and II</li>
-										<li>Statistics</li>
-										<li>Physics I and II</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="resume"><!-- Experience -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">Experience</h4>
-							</div>
-							<div>
-								<div class="resume-section">
-									<div class="project-header">
-										<p class="resume"><b>Gartner Inc.,</b> Stamford, CT</p>
-									</div>
-									<div class="resume-section">
-										<p class="resume">Strategic Technology Group Intern<p>
-										<p class="resume"><i>June 2015 - August 2015</i></p>
-										<p class="resume">In the summer of 2015, I interned with <a href="http://www.gartner.com" target="_blank" title="Gartner Inc.">Gartner</a> at the Stamford office. I worked with the Stratigic Technology Group, predominantly with front-end development.
-										<ul>
-											<li title="HTML, CSS, JavaScript, jQuery">Designed user-friendly front-end web applications for internal usage</li>
-											<li title="Perl, PLSQL">Enhanced data retrieval from database</li>
-											<li title="JavaScript, IBM Coremtrics">Integrated and monitored click and link tracking for numerous webpages</li>
-										</ul>
-									</div>
-									<div class="project-header">
-										<p class="resume"><b>Crescito, LLC.,</b> Hamilton, NJ</p>
-									</div>
-									<div class="resume-section">
-										<p class="resume">Web Design Intern<p>
-										<p class="resume"><i>October 2013 - June 2015</i></p>
-										<p class="resume">I helped create and maintains websites for <a href="http://www.crescito.com" target="_blank" title="Crescito, LLC.">Crescito, LLC.</a> over the course of two years.</p>
-										<ul>
-											<li title="HTML, CSS, JavaScript">Constructed the following websites:</li>
-												<li style="margin-left:1em"><a href="	http://www.crescito.com" target="_blank">www.crecito.com</a></li>
-												<li style="margin-left:1em"><a href="http://tye-njphilly.org" target="_blank">http://tye-njphilly.org</a></li>
-												<li style="margin-left:1em">www.xtensegrity.com</li>
-											<li>Implemented sign-up sheets, email access, and social networking pages</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="resume"><!-- Jobs -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">Work</h4>
-							</div>
-							<div class="resume-section">
-								<div class="project-header">
-									<p class="resume"><b>Rutgers University Help Desk,</b> New Brunswick, NJ</p>
-								</div>
-								<div class="resume-section">
-										<p class="resume">Level 1 Consultant<p>
-										<p class="resume"><i>May 2015 - Present</i></p>
-										<p class="resume">I recently joined the Rutgers University <a href="https://oit-nb.rutgers.edu/service/help-desk" title="Help Desk">Help Desk</a> as a consultant.</p>
-										<ul>
-											<li>Provided prompt and polite technical support to students and teachers</li>
-											<li>Troubleshooted numerous of hardware, software and network issues</li>
-										</ul>
-								</div>
-								<div class="project-header">
-									<p class="resume"><b>Rutgers University Computing Labs,</b> New Brunswick, NJ</p>
-								</div>
-								<div class="resume-section">
-										<p class="resume">Consultant<p>
-										<p class="resume"><i>May 2015 - Present</i></p>
-										<p class="resume">I work within the Rutgers University <a href="https://oit-nb.rutgers.edu/labs" title="Computer Labs">Computer Labs</a> as a consultant.</p>
-										<ul>
-											<li>Organized and maintained the Busch Computing Labs</li>
-											<li>Assisted students and faculty with various of questions or requests</li>
-										</ul>
-								</div>
-							</div>
-						</div>
-						<div class="resume"><!-- Extracurricular -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">Extracuriculars</h4>
-							</div>
-							<div class="resume-section">
-								<div class="project-header">
-									<p class="resume"><b>90.3 The Core,</b> Piscataway, NJ</p>
-								</div>
-								<div class="resume-section">
-										<p class="resume">Radio DJ and Librarian<p>
-										<p class="resume"><i>September 2014 - Present</i></p>
-										<p class="resume">I am involved in <a href="http://thecore.fm" target="_blank" title="The Core">90.3 RLC-WVPH FM Piscataway, The Core</a>, the student-run radio station broadcasted by Rutgers Unviersity and Piscataway High School.</p>
-										<ul>
-											<li>Operated a weekly music-based radio show, <a style="font-style:italic">When Anxieties Attack</a>, that plays classic and alternative rock</li>
-											<li>Worked within the Executive Committee to compile and organize music recieved by music producers</li>
-										</ul>
-								</div>
-							</div>
-						</div>
-						<div class="resume"><!-- Honors -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">Honors</h4>
-							</div>
-							<div class="resume-section">
-								<div class="project-header">
-									<p class="resume"><b>Google Games Winner</b></p>
-								</div>
-								<div class="resume-section" style="display:none">
-									<p class="resume"><i>May 2015</i></p>
-									<p class="resume">Won a competition based on coding, engineering, puzzle-solving, and trivia hosted by Google Inc.</p>
-								</div>
-								<div class="project-header">
-									<p class="resume"><b>SAS Excellence Award</b></p>
-								</div>
-								<div class="resume-section" style="display:none">
-									<p class="resume"><i>May 2015</i></p>
-									<p class="resume">Awarded a Rutgers University School of Arts and Science scholarship based on academic and personal achievements</p>
-								</div>
-								<div class="project-header">
-									<p class="resume"><b>Dean's List</b></p>
-								</div>
-								<div class="resume-section" style="display:none">
-									<p class="resume"><i>2013, 2014, 2015</i></p>
-									<p class="resume">Showed scholastic and academic success for numerous semesters at Rutgers University</p>
-								</div>
-							</div>
-						</div>
-						<div class="resume"><!-- Skills -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">Skills</h4>
-							</div>
-							<div class="resume-section">
-								<div class="project-header">
-									<p class="resume" title="(of the programming kind)"><b>Languages</b></p>
-								</div>
-								<div class="resume-section">
-									<ul>
-										<li>Java</li>
-										<li>C</li>
-										<li>HTML</li>
-										<li>JavaScript</li>
-										<li>CSS</li>
-										<li>jQuery</li>
-										<li>Python</li>
-										<li>Perl</li>
-										<li>Scheme</li>
-										<li>Prolog</li>
-										<li>Assembly</li>
-										<li>SQL</li>
-									</ul>
-								</div>
-								<!--
-								<div class="project-header">
-									<p class="resume"><b>Programs</b></p>
-								</div>
-								<div class="resume-section">
-									<ul>
-										<li>Version Control:</li>
-											<li style="margin-left:.75em">Github</li>
-											<li style="margin-left:.75em">Apache Subversion</li>
-											<li style="margin-left:.75em">TortoiseSVN</li>
-										<li>Terminal/Command Prompt</li>
-										<li>Vi/Vim</li>
-										<li>PuTTY</li>
-										<li>SSH/FTP</li>
-										<li>Eclipse</li>
-										<li>Tomcat Servlets</li>
-										<li>Processing</li>
-										<li>Microsoft/Open Source Office</li>
-									</ul>
-								</div>
-							-->
-							</div>
-						</div>
-						<div class="resume"><!-- High School -->
-							<div class="project-header">
-								<h4 style="color:#FF9999">High School</h4>
-							</div>
-							<div class="resume-section" style="display:none">
-								<p class="resume"><i>September 2009 - June 2013</i></p>
-								<!--p class="resume">Final GPA: ??</p-->
-								<div class="project-header">
-									<p class="resume"><b>Air Force Junior ROTC</b></p>
-								</div>
-								<div class="resume-section" style="display:none">
-									<p class="resume">Participated in the now disbanded AFJROTC program at Robbinsville High School.<br>Graduated as an officer in the Military Flight in 2010.<br>Member of the Drill Team and the Honor Guard</p>
-									<div class="project-header">
-										<p class="resume">Awards and Certificates</p>
-									</div>
-									<div class="resume-section">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div id="resume"></div>
 				</div>
 			</div>
 			<span class="anchor" id="contact"></span>
 			<div class="section"><!-- style="background-color:#FFDDDD" -->
-				<div class="information" style="float:left; width:38%">
+				<div class="information">
 					<h3>Contact Me</h3>
-					<p>
-				</div>
-				<div class="information" style="float:right; width:38%;">
-					<h3>Links</h3>
+					<p><font color="#69C773"><b>Email: </b></font>anisha0713@gmail.com</p>
+					<p><font color="#69C773"><b>GitHub: </b></font><a href="https://github.com/anishamohan" target="_blank">anishamohan</a></p>
+					<p><font color="#69C773"><b>LinkedIn: </b></font><a href="https://www.linkedin.com/pub/anisha-mohan/101/518/676" target="_blank">Anisha Mohan</a></p>
 				</div>
 			</div>
 			<div class="footer">
