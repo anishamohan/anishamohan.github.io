@@ -1,63 +1,378 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<!-- This webpage was created by Anisha Mohan on 8 July 2015. -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="Anisha Mohan's personal website">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="author" content="Anisha Mohan"
+		
+		<title>Anisha Mohan</title>
+		
+		<style type="text/css">
+			body, html{
+				height:100%;
+				width:100%;
+			}
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+			/* Basic Fonts~ */
+			h1{
+				font-size:3em;
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin:0 0 .5em 0;
+			}
+			h3{
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				/*margin-bottom:.5em;
+				margin-top:.5em;*/
+				margin:0 0 .5em 0;
+				color:#252525;
+				font-size:1.75em;
+			}
+			h4{
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin:0;
+				font-size:1.15em;
+				color:#252525;
+				text-decoration:none;
+			}
+			p{
+				font-size:1em;
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin:.5em 0 .5em 0;
+				color:#252525;
+				line-height:140%;
+			}
+			a{
+				/*text-decoration:underline;*/
+				text-decoration:none;
+				font-size:1em;
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				color:#BBBBBB;
+				line-height:140%;
+			}
+			a:hover{
+				color:#69C773;
+			}
+			ul{
+				margin:.5em;
+				padding-left:.75em;
+			}
+			li{
+				font-family:"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin:0 0 .5em 0;
+				color:#252525;
+			}
+			
+			/* First display (as soon as page is opened) */
+			.image{
+				width:100%;
+				height:100%;
+				position:absolute;
+				left:0px;
+				top:0px;
+				background-position:center bottom;
+				background-size:cover;
+				/*background-image:url(ARCHER.jpg);*/
+				background-color:black;
+				z-index:1;
+			}
+			.writing{
+				top:50%;
+				left:50%;
+				z-index:2;
+				position:absolute;
+				-webkit-transform:translate(-50%, -50%);
+				-ms-transform:translate(-50%, -50%);
+				-moz-transform:translate(-50%, -50%);
+				text-align:center;
+			}
+			
+			/* The Navigation Bar*/
+			.nav-bar{
+				text-align:center;
+			}
+			ul.nav-bar{
+				margin:0em;
+				padding:0em;
+				content:" ";
+				list-style:none;
+			}
+			li.nav-bar{
+				list-style-type:none;
+				display:inline-block;
+				text-align:center;
+				position:relative;
+				margin:auto;
+				height:2.5em;
+			}
+			a.nav-bar{
+				color:#FFF;
+				font-size:1em;
+				font-family:Helvetica, Arial, sans-serif;
+				text-decoration:none;
+				position:relative;
+				display:inline-block;
+				padding:.5em;
+				/*padding:.7em .75em .7em .75em;
+				margin:0 .1em 0 .1em;*/
+				left:50%;
+				top:50%;
+				-webkit-transform:translate(-50%,-50%);
+				-ms-transform:translate(-50%, -50%);
+				-moz-transform:translate(-50%, -50%);
+			}
+			a.nav-bar:hover{
+				color:#FFF;
+				background:#252525;
+			}
+			.selected{ /* Changes color when it is selected */
+				background-color:#69C773;
+				color:#FFF;
+			}
+			#nav{
+				height:2.5em;
+				width:100%;
+				margin:0em;
+				padding:0em;
+				background:transparent;
+				left:0em;
+				bottom:0;
+				position:absolute;
+				z-index:9999;
+			}
 
-  <title>Anisha</title>
-  <meta name="description" content="">
+			#space{ /* Creates a space between content and top so for nav bar */
+				height:0em;
+			}
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+			/* The actual information */
+			.content{
+				/*margin:2% 5% 2%;*/
+				top:100%;
+				left:0;
+				position:absolute;
+			}
+			.section{
+				/*margin:2% 5% 2%;*/
+				background-color:#FFFFFF;
+				border-radius:.25em;
+				min-height:100vh;
+				width:100%;
+				/*vertical-align:top;*/
+			}
+			.information{
+				padding:4% 6% 5% 6%;
+			}
+			.anchor{
+				display:block;
+				height:2.5em;
+				margin-top:-2.5em;
+				visibility:hidden;
+			}
 
-</head>
+			.project{
+				background:#FFFFFF;
+				padding:1%;
+				margin-bottom:.5em;
+			}
+			.project-header{
+				cursor:pointer;
+			}
+			.project-header:hover{
+				text-decoration:underline;
+			}
+			.project-info{
+				display:none;
+			}
 
-<body>
+			a.resume-btn{
+				border:.1em solid #EDEDED;
+				background-color:#EDEDED;
+				padding:.5em;
+				color:#252525;
+				cursor:pointer;
+			}
+			a.resume-btn:hover{
+				background-color:#FFFFFF;
+				color:#252525;
+			}
+			div.resume{
+				padding:1%;
+				margin:.5em;
+			}
+			p.resume{
+				margin:.25em 0 0 0;
+			}
+			.resume-section{
+				padding:.5%;
+				margin-left:.5em;
+			}
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Anisha</h1>
-    </header>
-    <div id="container">
-      <p class="tagline"></p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/anishamohan" class="code">View Anisha on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h3>
-<a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span class="octicon octicon-link"></span></a>About me</h3>
+			div.footer{
+				height:1.5em;
+				width:100%;
+				left:0;
+				position:absolute;
+				background-color:#666666;
+			}
+			p.footer{
+				margin:0 0 0 .5em;
+				float:left;
+			}
+			a.footer{
+				margin:0 .5em 0 0;
+				float:right;
+			}
+		</style>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('a.nav-bar').each(function(){
+					$(this).click(function(){
+						$('a.nav-bar').removeClass('selected');
+						$(this).addClass('selected');
+					})
+				});
+			});
+			
+			var startNavBarPos=-1;
+			window.onscroll=function(){
+				var bar = document.getElementById('nav');
+				if(startNavBarPos<0)startNavBarPos=findPosY(bar);
+				if(pageYOffset>startNavBarPos){
+					bar.style.position='fixed';
+					bar.style.background='#666666';
+					bar.style.top=0;
+					document.getElementById('space').style.height='2.5em';
+				}else{
+					bar.style.position='absolute';
+					bar.style.background='transparent';
+					bar.style.top='94.1%';
+					document.getElementById('space').style.height='0em';
+				}
+			};
+			
+			function findPosY(obj) {
+				var curtop = 0;
+				if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+					while (obj.offsetParent) {
+						curtop += obj.offsetTop;
+						obj = obj.offsetParent;
+					}
+					curtop += obj.offsetTop;
+				} else if (obj.y) {
+					curtop += obj.y;
+				}
+				return curtop;
+			}
 
-<p>Hello, my name is Anisha Mohan. I am currently enrolled in Rutgers University as a Junior studying Computer Science. I am also involved at 90.3 The Core, a radio station run within Rutgers as a DJ and librarian.</p>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="owner">
+			/*
+			navigator.sayswho= (function(){
+				var N= navigator.appName, ua= navigator.userAgent, tem,
+					M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*([\d\.]+)/i);
+				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+				M = M? [M[1], M[2]]:[N, navigator.appVersion, '-?'];
+				return M.join(' ');
+			})();
+			console.log(navigator.sayswho);
+			*/
+			$(document).ready(function(){
+				$(".project-header").click(function (){
+					$header = $(this);
+					$content = $header.next();
+					$content.slideToggle(500);
+				});
+			});
 
-      <p><a href="https://github.com/anishamohan" class="avatar"><img src="https://avatars3.githubusercontent.com/u/8754278?v=3&amp;s=60" width="48" height="48"></a>View <a href="https://github.com/anishamohan">anishamohan</a> on <a href="https://www.github.com">GitHub</a></p>
+			$(document).ready(function(){
+				$("#resume").load("resume-html.html");
+				/*document.getElementById("resume-html").addEventListener('click', function() {
+    				$("#resume").load("resume-html.html");
+				}, false);
+   				document.getElementById('resume-pdf').addEventListener('click', function() {
+    				$("#resume").load("resume-pdf.html");
+				}, false);*/
+			});
+		</script>
+	</head>
 
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/anishamohan/anishamohan.github.io/tarball/master" class="tar">tar</a><a href="https://github.com/anishamohan/anishamohan.github.io/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+	<body>
+		<div class="image" id="home"></div>
+		<div class="writing">
+			<h1 style="color:white">anisha mohan</h1>
+			<!--p style="color:white">Just a college girl trying not to have an existential crisis</p-->
+		</div>
+		<div id="nav">
+			<ul class="nav-bar">
+				<li class="nav-bar" title="The top of the website"><a class="nav-bar" href="#home">Home</a></li>
+				<li class="nav-bar" title="Basic information about myself"><a class="nav-bar" href="#about">About</a></li>
+				<li class="nav-bar" title="See what I have been working on"><a class="nav-bar" href="#projects">Projects</a></li>
+				<li class="nav-bar" title="See my experience and history"><a class="nav-bar" href="#resume">Resume</a></li>
+				<li class="nav-bar" title="Get in contact with me"><a class="nav-bar" href="#contact">Contact Me</a></li>
+			</ul>
+		</div>
+		<space id="space"></space><!-- Needed? Helpful? -->
+		<div class="content">
+			<span class="anchor" id="about"></span>
+			<div class="section">
+				<div class="information">
+					<!--br-->
+					<h3>About</h3>
+					<p><font color="#FF9999"><b>Hello!</b></font><br>My name is Anisha Mohan and this is my website. I am currently a Computer Science major at Rutgers University as well as a DJ and Librarian at 90.3 The Core.<br>As I learn and explore more of my interests, I hope to update this website to show my progress. I also want to play around with interesting and pretty web developement and design. The website might look bare today, but it won't be for long!<br>I hope you enjoy your stay!</p>
+					<!--br-->
+				</div>
+			</div>
+			<span class="anchor" id="projects"></span>
+			<div class="section" style="background:#EDEDED">
+				<div class="information">
+					<!--br-->
+					<h3>Projects</h3>
+					<p>I plan to update this area with things that I am currently working on or things that I have worked on in the past!</p>
+					<div class="project">
+						<div class="project-header">
+							<p style="color:#69C773"><b>Multithreaded/Multiprocessing Bank</b></p>
+						</div>
+						<div style="display:none">
+							<p>I created a very simple bank operator that utilizes multithreading and multiprocessing in order to keep track of multiple accounts from multiple users. This program was written in C and is run through servers on terminal.</p>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project-header">
+							<p style="color:#69C773"><b>Friendship Graph</b></p>
+						</div>
+						<div style="display:none">
+							<p>Step aside Facebook, I just created the best way to keep track of friends and cliques using Java. This project was a project for class in order to utilize data structures and fastest-path alorithms.</p>
+						</div>
+					</div>
+					<!--br-->
+				</div>
+			</div>
+			<span class="anchor" id="resume"></span>
+			<div class="section">
+				<div class="information">
+					<h3>Resume</h3>
+					<!--a class="resume-btn" id="resume-html">View in HTML</a>
+					<a class="resume-btn" id="resume-pdf">View in PDF</a-->
+					<br>
+					<div id="resume"></div>
+				</div>
+			</div>
+			<span class="anchor" id="contact"></span>
+			<div class="section"><!-- style="background-color:#FFDDDD" -->
+				<div class="information">
+					<h3>Contact Me</h3>
+					<p><font color="#69C773"><b>Email: </b></font>anisha0713@gmail.com</p>
+					<p><font color="#69C773"><b>GitHub: </b></font><a href="https://github.com/anishamohan" target="_blank">anishamohan</a></p>
+					<p><font color="#69C773"><b>LinkedIn: </b></font><a href="https://www.linkedin.com/pub/anisha-mohan/101/518/676" target="_blank">Anisha Mohan</a></p>
+				</div>
+			</div>
+			<div class="footer">
+				<p class="footer">Created by Anisha Mohan</p>
+				<a class="footer" href="#home">Back to the top!</a>
+			</div>
+		</div>
+	</body>
 </html>
