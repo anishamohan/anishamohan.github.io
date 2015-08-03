@@ -1,52 +1,67 @@
-(function($) {
-$(document).ready(function(){
+      $(document).ready(function () {
+				$('a.nav-bar').each(function(){
+					$(this).click(function(){
+						$('a.nav-bar').removeClass('selected');
+						$(this).addClass('selected');
+					})
+				});
+			});
+			
+			var startNavBarPos=-1;
+			window.onscroll=function(){
+				var bar = document.getElementById('nav');
+				if(startNavBarPos<0)startNavBarPos=findPosY(bar);
+				if(pageYOffset>startNavBarPos){
+					bar.style.position='fixed';
+					bar.style.background='#666666';
+					bar.style.top=0;
+					document.getElementById('space').style.height='2.5em';
+				}else{
+					bar.style.position='absolute';
+					bar.style.background='transparent';
+					bar.style.top='94.1%';
+					document.getElementById('space').style.height='0em';
+				}
+			};
+			
+			function findPosY(obj) {
+				var curtop = 0;
+				if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+					while (obj.offsetParent) {
+						curtop += obj.offsetTop;
+						obj = obj.offsetParent;
+					}
+					curtop += obj.offsetTop;
+				} else if (obj.y) {
+					curtop += obj.y;
+				}
+				return curtop;
+			}
 
-  // putting lines by the pre blocks
-  $("pre").each(function(){
-    var pre = $(this).text().split("\n");
-    var lines = new Array(pre.length+1);
-    for(var i = 0; i < pre.length; i++) {
-      var wrap = Math.floor(pre[i].split("").length / 70)
-      if (pre[i]==""&&i==pre.length-1) {
-        lines.splice(i, 1);
-      } else {
-        lines[i] = i+1;
-        for(var j = 0; j < wrap; j++) {
-          lines[i] += "\n";
-        }
-      }
-    }
-    $(this).before("<pre class='lines'>" + lines.join("\n") + "</pre>");
-  });
+			/*
+			navigator.sayswho= (function(){
+				var N= navigator.appName, ua= navigator.userAgent, tem,
+					M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*([\d\.]+)/i);
+				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+				M = M? [M[1], M[2]]:[N, navigator.appVersion, '-?'];
+				return M.join(' ');
+			})();
+			console.log(navigator.sayswho);
+			*/
+			$(document).ready(function(){
+				$(".project-header").click(function (){
+					$header = $(this);
+					$content = $header.next();
+					$content.slideToggle(500);
+				});
+			});
 
-  var headings = [];
-
-  var collectHeaders = function(){
-    headings.push({"top":$(this).offset().top - 15,"text":$(this).text()});
-  }
-
-  if($(".markdown-body h1").length > 1) $(".markdown-body h1").each(collectHeaders)
-  else if($(".markdown-body h2").length > 1) $(".markdown-body h2").each(collectHeaders)
-  else if($(".markdown-body h3").length > 1) $(".markdown-body h3").each(collectHeaders)
-
-  $(window).scroll(function(){
-    if(headings.length==0) return true;
-    var scrolltop = $(window).scrollTop() || 0;
-    if(headings[0] && scrolltop < headings[0].top) {
-      $(".current-section").css({"opacity":0,"visibility":"hidden"});
-      return false;
-    }
-    $(".current-section").css({"opacity":1,"visibility":"visible"});
-    for(var i in headings) {
-      if(scrolltop >= headings[i].top) {
-        $(".current-section .name").text(headings[i].text);
-      }
-    }
-  });
-
-  $(".current-section a").click(function(){
-    $(window).scrollTop(0);
-    return false;
-  })
-});
-})(jQuery)
+			/*$(document).ready(function(){
+				$("#resume").load("resume-html.html");
+				document.getElementById("resume-html").addEventListener('click', function() {
+    				$("#resume").load("resume-html.html");
+				}, false);
+   				document.getElementById('resume-pdf').addEventListener('click', function() {
+    				$("#resume").load("resume-pdf.html");
+				}, false);
+			});*/
