@@ -1,0 +1,35 @@
+{
+  "skills": {
+    "programmingLanguages": [
+      "JavaScript", "TypeScript", "PHP", "Swift", "Java", "Python"
+    ],
+    "librariesFrameworks": [
+      "Node.js", "Express.js", "React", "NextJS", "Angular"
+    ],
+    "databases": [
+      "SQL", "PostgreSQL", "OracleDB", "NoSQL"
+    ],
+    "ciCd": [
+      "Docker", "Jenkins", "Kubernetes", "Git"
+    ],
+    "cloudComputing": [
+      "AWS", "Azure"
+    ],
+    "tools": [
+      "Atlassian (Confluence, BitBucket, Jira)", "Github", "Microsoft 360 and PowerApps", "Monday.com", "Asana"
+    ],
+    "pm": [
+      "SDLC", "Agile and Waterfall methodologies", "UI/UX", "Design Thinking", "Strategic Thinking", "Stakeholder Management", "Product Roadmaps", "Financial Management", "Change Management"
+    ]
+  },
+  "professionalExperience": [
+    "Seasoned Software Engineer and Product Manager with over 7 years of expertise in healthcare technology",
+    "Proficient in a diverse selection of technologies, including JavaScript, Node.js, React, Angular, PHP, Swift, Java, and Python.",
+    "Demonstrated success in managing intricate projects, consistently delivering results on time and within budget constraints.",
+    "Skilled in bridging the gap between technical teams and stakeholders, driving initiatives forward, and nurturing collaborative environments.",
+    "Extensive knowledge of regulatory compliance, particularly in adhering to data protection regulations and GxP standards within the pharmaceutical industry.",
+    "Experienced mentor, conducting code reviews, and establishing robust engineering best practices to elevate team performance.",
+    "Possesses strong problem-solving acumen and excellent written and verbal communication skills.",
+    "Committed to community engagement, contributing to leadership roles and volunteering initiatives to foster positive change."
+  ]
+}
