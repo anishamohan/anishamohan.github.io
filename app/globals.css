@@ -4,7 +4,7 @@
 
 @layer base {
   main {
-    @apply bg-white dark:bg-black text-black dark:text-white transition-all duration-500;
+    @apply bg-white dark:bg-black text-black dark:text-white transition-all duration-300;
   }
 
   p {

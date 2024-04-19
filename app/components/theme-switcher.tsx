@@ -1,17 +1,10 @@
 'use client'
 
-import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import MoonIcon from "../ui/icons/moon-icon";
 import SunIcon from "../ui/icons/sun-icon";
 
 export default function ThemeSwitcher() {
-  // const { theme, setTheme } = useTheme();
-  // const [ hasMounted, setHasMounted ] = useState(false)
-
-  // useEffect(() => setHasMounted(true), []);
-
-  // if (hasMounted == false) { return null; }
   const [ theme, setTheme ] = useState(
     typeof window !== "undefined" ? localStorage.theme : "dark"
   );
