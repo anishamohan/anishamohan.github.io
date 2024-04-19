@@ -13,7 +13,7 @@ export default function Home() {
           <img src="/headshot.jpg" alt="Anisha Mohan's Headshot" className="rounded-full h-32 w-32 lg:h-72 lg:w-72" />
         </div>
         <div className="lg:w-2/3 text-center inline-block my-10 lg:m-auto">
-          <h1 className="font-bold text-3xl mb-3">Hi, I'm <span className="text-purple dark:text-light-teal transition-all transaction-color duration-300 ease-in-out">Anisha Mohan</span>!</h1>
+          <h1 className="font-bold text-3xl mb-3">Hi, I&apos;m <span className="text-purple dark:text-light-teal transition-all transaction-color duration-300 ease-in-out">Anisha Mohan</span>!</h1>
           <p className="space-y-1 font-base">
             I am a Full Stack Software Engineer and Product Manager with a passion for leveraging technology to solve real-life problems. I approach every challenges with a blend of innovation, compassion, and curiousity.
             <br />
@@ -28,42 +28,42 @@ export default function Home() {
       <hr className="h-px mt-11 mb-8 bg-black border-0 dark:bg-white w-full" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:my-10 place-content-center">
         {/* Skills */}
-        <div className="rounded-md p-6 w-full bg-light-grey dark:bg-dark-grey drop-shadow-lg">
+        <div className="rounded-md p-6 w-full bg-light-grey dark:bg-dark-grey transition-all duration-200 ease-in-out drop-shadow-lg">
           <h3 className="text-xl font-bold pb-1">Skills</h3>
           <div className="mt-2">
             <p className="font-light py-0.5">Progamming Languages</p>
-            {Resume.skills.programmingLanguages.map((val) => (<span className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.programmingLanguages.map((val, i) => (<span key={i} className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">Libraries & Frameworks</p>
-            {Resume.skills.librariesFrameworks.map((val) => (<span className="rounded-lg bg-light-purple dark:bg-dark-purple drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.librariesFrameworks.map((val, i) => (<span key={i} className="rounded-lg bg-light-purple dark:bg-dark-purple drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">Databases</p>
-            {Resume.skills.databases.map((val) => (<span className="rounded-lg bg-light-orange dark:bg-dark-orange drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.databases.map((val, i) => (<span key={i} className="rounded-lg bg-light-orange dark:bg-dark-orange drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">CI/CD</p>
-            {Resume.skills.ciCd.map((val) => (<span className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.ciCd.map((val, i) => (<span key={i} className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">Cloud Computing</p>
-            {Resume.skills.cloudComputing.map((val) => (<span className="rounded-lg bg-light-purple dark:bg-dark-purple drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.cloudComputing.map((val, i) => (<span key={i} className="rounded-lg bg-light-purple dark:bg-dark-purple drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">Tools</p>
-            {Resume.skills.tools.map((val) => (<span className="rounded-lg bg-light-orange dark:bg-dark-orange drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.tools.map((val, i) => (<span key={i} className="rounded-lg bg-light-orange dark:bg-dark-orange drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
           <div className="mt-2">
             <p className="font-light py-0.5">Product Management</p>
-            {Resume.skills.pm.map((val) => (<span className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
+            {Resume.skills.pm.map((val, i) => (<span key={i} className="rounded-lg bg-light-teal dark:bg-dark-teal drop-shadow-md font-bold py-1 px-2 m-1 inline-block">{val}</span>))}
           </div>
         </div>
         {/* Professional Summary */}
-        <div className="rounded-md p-6 w-full bg-light-grey dark:bg-dark-grey drop-shadow-lg">
+        <div className="rounded-md p-6 w-full bg-light-grey dark:bg-dark-grey transition-all duration-200 ease-in-out drop-shadow-lg">
           <h3 className="text-xl font-bold pb-3">Professional Summary</h3>
           <ul className="list-disc list-inside space-y-1 [&>*:nth-child(3n+1)]:marker:text-purple [&>*:nth-child(3n-1)]:marker:text-orange [&>*:nth-child(3n)]:marker:text-teal">
-            {Resume.professionalExperience.map((val) => (<li>{val}</li>))}
+            {Resume.professionalExperience.map((val, i) => (<li key={i}>{val}</li>))}
           </ul>
         </div>
       </div>
