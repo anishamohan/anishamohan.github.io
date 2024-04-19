@@ -24,8 +24,7 @@ export default function ThemeSwitcher() {
 
   return (<div className="absolute top-0 right-0 m-4">
     <button onClick={() => {(theme === "dark") ? setTheme("light") : setTheme("dark")}} title="Toggle Dark/Light Mode">
-      {theme === "dark" && <SunIcon />}
-      {theme === "light" && <MoonIcon />}
+      {(theme === "dark") ? <SunIcon /> : <MoonIcon />}
     </button>
   </div>)
 }
